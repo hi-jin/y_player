@@ -101,6 +101,7 @@ class YPlayerState extends State<YPlayer> with SingleTickerProviderStateMixin {
       await _controller.initialize(
         widget.youtubeUrl,
         autoPlay: widget.autoPlay,
+        allowFullScreen: false,
         aspectRatio: widget.aspectRatio,
       );
       if (mounted) {
