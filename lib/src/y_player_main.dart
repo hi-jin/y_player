@@ -162,7 +162,10 @@ class YPlayerState extends State<YPlayer> with SingleTickerProviderStateMixin {
           seekOnDoubleTap: true,
           seekBarPositionColor: widget.color ?? const Color(0xFFFF0000),
           seekBarThumbColor: widget.color ?? const Color(0xFFFF0000),
-        )..bottomButtonBar.removeLast(),
+          bottomButtonBar: [
+            MaterialPositionIndicator(),
+          ],
+        ),
         fullscreen: MaterialVideoControlsThemeData(
           volumeGesture: true,
           brightnessGesture: true,
