@@ -162,7 +162,7 @@ class YPlayerState extends State<YPlayer> with SingleTickerProviderStateMixin {
           seekOnDoubleTap: true,
           seekBarPositionColor: widget.color ?? const Color(0xFFFF0000),
           seekBarThumbColor: widget.color ?? const Color(0xFFFF0000),
-        ),
+        )..bottomButtonBar.removeLast(),
         fullscreen: MaterialVideoControlsThemeData(
           volumeGesture: true,
           brightnessGesture: true,
@@ -195,8 +195,7 @@ class YPlayerState extends State<YPlayer> with SingleTickerProviderStateMixin {
     } else if (_controller.status == YPlayerStatus.loading) {
       // If the video is still loading, show a loading indicator
       return Center(
-        child:
-            widget.loadingWidget ?? const CircularProgressIndicator.adaptive(),
+        child: widget.loadingWidget ?? const CircularProgressIndicator.adaptive(),
       );
     } else if (_controller.status == YPlayerStatus.error) {
       // If there was an error, show the error widget
